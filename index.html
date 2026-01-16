@@ -1,0 +1,570 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Meocon Bistro | Restoran</title>
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --card:#111826;
+      --text:#e8eef7;
+      --muted:#a9b4c3;
+      --brand:#ffb703;
+      --brand2:#fb8500;
+      --line:rgba(255,255,255,.08);
+      --shadow: 0 18px 50px rgba(0,0,0,.45);
+      --radius: 18px;
+      --max: 1120px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(1200px 600px at 20% -10%, rgba(255,183,3,.25), transparent 60%),
+        radial-gradient(900px 500px at 90% 10%, rgba(251,133,0,.18), transparent 60%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.45;
+    }
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:0 20px}
+    /* Header */
+    header{
+      position:sticky; top:0; z-index:10;
+      backdrop-filter:saturate(140%) blur(10px);
+      background: rgba(11,15,20,.6);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0;
+      gap:16px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight:800; letter-spacing:.2px;
+    }
+    .logo{
+      width:38px; height:38px; border-radius:12px;
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      box-shadow: 0 12px 28px rgba(255,183,3,.25);
+      display:grid; place-items:center; color:#1b1200; font-weight:900;
+    }
+    nav ul{list-style:none; display:flex; gap:18px; margin:0; padding:0}
+    nav a{color:var(--muted); font-weight:600}
+    nav a:hover{color:var(--text)}
+    .cta{
+      display:flex; gap:10px; align-items:center;
+    }
+    .btn{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      color:var(--text);
+      padding:10px 14px;
+      border-radius:14px;
+      font-weight:700;
+      cursor:pointer;
+      transition:.18s ease;
+    }
+    .btn:hover{transform: translateY(-1px); border-color: rgba(255,255,255,.18)}
+    .btn.primary{
+      border:none;
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      color:#1b1200;
+    }
+    /* Hero */
+    .hero{
+      padding:54px 0 18px;
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:28px;
+      align-items:stretch;
+    }
+    .hero h1{
+      margin:0 0 10px;
+      font-size: clamp(34px, 5vw, 56px);
+      line-height:1.05;
+      letter-spacing:-.8px;
+    }
+    .hero p{
+      margin:0 0 22px;
+      color:var(--muted);
+      font-size: 16.5px;
+      max-width: 58ch;
+    }
+    .hero-actions{display:flex; gap:12px; flex-wrap:wrap}
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      color:var(--muted);
+      font-weight:700;
+      width:max-content;
+      margin-bottom:14px;
+    }
+    .pill span{color:var(--text)}
+    .hero-card{
+      border:1px solid var(--line);
+      background: linear-gradient(180deg, rgba(17,24,38,.9), rgba(17,24,38,.6));
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
+      min-height: 320px;
+    }
+    .hero-card::before{
+      content:"";
+      position:absolute; inset:-1px;
+      background:
+        radial-gradient(400px 240px at 70% 20%, rgba(255,183,3,.28), transparent 60%),
+        radial-gradient(380px 240px at 10% 80%, rgba(251,133,0,.20), transparent 60%);
+      pointer-events:none;
+    }
+    .hero-card-inner{
+      position:relative;
+      padding:20px;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      height:100%;
+    }
+    .mini-grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+      margin-top:auto;
+    }
+    .mini{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      border-radius:16px;
+      padding:12px;
+    }
+    .mini b{display:block}
+    .mini small{color:var(--muted)}
+    /* Sections */
+    section{padding:28px 0}
+    .section-head{
+      display:flex; align-items:end; justify-content:space-between; gap:16px;
+      margin-bottom:14px;
+    }
+    .section-head h2{margin:0; font-size:24px}
+    .section-head p{margin:0; color:var(--muted)}
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+    }
+    .card{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      border-radius: var(--radius);
+      padding:16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+      transition:.18s ease;
+    }
+    .card:hover{transform: translateY(-2px); border-color: rgba(255,255,255,.16)}
+    .tag{
+      display:inline-block;
+      padding:6px 10px;
+      border-radius:999px;
+      background: rgba(255,183,3,.14);
+      color: #ffd78a;
+      font-weight:800;
+      font-size:12px;
+      border: 1px solid rgba(255,183,3,.22);
+    }
+    .price{font-weight:900; color: var(--text)}
+    .muted{color:var(--muted)}
+    .row{display:flex; align-items:center; justify-content:space-between; gap:10px}
+    .divider{height:1px; background:var(--line); margin:12px 0}
+    /* Reservation */
+    .form{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap:12px;
+    }
+    label{display:block; font-size:12px; color:var(--muted); margin-bottom:6px; font-weight:700}
+    input, select, textarea{
+      width:100%;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background: rgba(0,0,0,.18);
+      color:var(--text);
+      outline:none;
+    }
+    input:focus, select:focus, textarea:focus{
+      border-color: rgba(255,183,3,.45);
+      box-shadow: 0 0 0 4px rgba(255,183,3,.12);
+    }
+    textarea{min-height:110px; grid-column: 1 / -1; resize:vertical}
+    .form .full{grid-column: 1 / -1}
+    .note{
+      border:1px dashed rgba(255,255,255,.16);
+      border-radius:16px;
+      padding:12px;
+      color:var(--muted);
+      background: rgba(255,255,255,.02);
+    }
+    /* Footer */
+    footer{
+      padding:28px 0 36px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+    }
+    .foot{
+      display:flex; flex-wrap:wrap; gap:18px; align-items:center; justify-content:space-between;
+    }
+    /* Responsive */
+    @media (max-width: 920px){
+      .hero{grid-template-columns: 1fr; }
+      .grid{grid-template-columns: 1fr}
+      .form{grid-template-columns: 1fr 1fr}
+    }
+    @media (max-width: 520px){
+      nav ul{display:none}
+      .form{grid-template-columns: 1fr}
+      .hero-actions{flex-direction:column; align-items:stretch}
+      .btn{width:100%}
+    }
+    /* Toast */
+    .toast{
+      position:fixed; right:16px; bottom:16px; z-index:50;
+      background: rgba(17,24,38,.95);
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:12px 14px;
+      box-shadow: var(--shadow);
+      max-width: 360px;
+      display:none;
+    }
+    .toast.show{display:block}
+    .toast b{display:block; margin-bottom:4px}
+    .toast small{color:var(--muted)}
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="wrap nav">
+      <div class="brand">
+        <div class="logo">M</div>
+        <div>
+          <div>Meocon Bistro</div>
+          <div class="muted" style="font-size:12px; font-weight:700;">Modern Türk Mutfağı</div>
+        </div>
+      </div>
+
+      <nav aria-label="Site menüsü">
+        <ul>
+          <li><a href="#menu">Menü</a></li>
+          <li><a href="#hakkimizda">Hakkımızda</a></li>
+          <li><a href="#rezervasyon">Rezervasyon</a></li>
+          <li><a href="#iletisim">İletişim</a></li>
+        </ul>
+      </nav>
+
+      <div class="cta">
+        <a class="btn" href="#menu">Menüyü Gör</a>
+        <a class="btn primary" href="#rezervasyon">Rezervasyon</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div>
+        <div class="pill">⭐ <span>4.8/5</span> · 2.000+ misafir</div>
+        <h1>Şehrin ortasında, sıcak bir lezzet molası.</h1>
+        <p>
+          Meocon Bistro’da mevsimsel ürünlerle hazırlanan modern Türk mutfağı,
+          imza kokteyller ve samimi bir atmosfer seni bekliyor.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn primary" href="#rezervasyon">Hemen Rezervasyon Yap</a>
+          <a class="btn" href="#iletisim">Yol Tarifi & Saatler</a>
+        </div>
+
+        <div style="margin-top:16px" class="note">
+          <b style="color:var(--text)">Bugün önerimiz:</b>
+          <span class="muted">Köz patlıcanlı beğendi · Nar ekşili salata · Fırın sütlaç</span>
+        </div>
+      </div>
+
+      <aside class="hero-card" aria-label="Öne çıkanlar">
+        <div class="hero-card-inner">
+          <div class="row">
+            <span class="tag">Öne Çıkan</span>
+            <span class="muted" id="openStatus">Kontrol ediliyor…</span>
+          </div>
+
+          <h3 style="margin:0; font-size:20px">Bu akşam masan hazır mı?</h3>
+          <p class="muted" style="margin:0">
+            Rezervasyonunu 30 saniyede bırak, biz seni arayıp onaylayalım.
+          </p>
+
+          <div class="mini-grid" aria-label="Hızlı bilgiler">
+            <div class="mini">
+              <b>Çalışma Saatleri</b>
+              <small>Her gün 12:00 – 23:30</small>
+            </div>
+            <div class="mini">
+              <b>Konum</b>
+              <small>Merkez / İstanbul</small>
+            </div>
+            <div class="mini">
+              <b>Mutfak</b>
+              <small>Modern Türk</small>
+            </div>
+            <div class="mini">
+              <b>Rezervasyon</b>
+              <small>+90 (5xx) xxx xx xx</small>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="menu">
+      <div class="section-head">
+        <div>
+          <h2>Menü</h2>
+          <p>Örnek içerik — kendi ürünlerinle kolayca güncelleyebilirsin.</p>
+        </div>
+        <div class="muted" style="font-weight:700">Kişi başı ortalama: ₺₺</div>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <div class="row">
+            <b>Köz Patlıcanlı Beğendi</b>
+            <span class="price">₺ 260</span>
+          </div>
+          <div class="divider"></div>
+          <p class="muted" style="margin:0">Dana eti, beğendi yatağı, taze otlar.</p>
+          <div style="margin-top:10px" class="tag">İmza</div>
+        </article>
+
+        <article class="card">
+          <div class="row">
+            <b>Nar Ekşili Akdeniz Salata</b>
+            <span class="price">₺ 160</span>
+          </div>
+          <div class="divider"></div>
+          <p class="muted" style="margin:0">Roka, keçi peyniri, nar, ceviz.</p>
+          <div style="margin-top:10px" class="tag">Vegan Ops.</div>
+        </article>
+
+        <article class="card">
+          <div class="row">
+            <b>Günün Makarnası</b>
+            <span class="price">₺ 210</span>
+          </div>
+          <div class="divider"></div>
+          <p class="muted" style="margin:0">Şefin mevsim sosu ile.</p>
+          <div style="margin-top:10px" class="tag">Popüler</div>
+        </article>
+
+        <article class="card">
+          <div class="row">
+            <b>Izgara Somon</b>
+            <span class="price">₺ 390</span>
+          </div>
+          <div class="divider"></div>
+          <p class="muted" style="margin:0">Limon, dereotu, sebze garnitür.</p>
+        </article>
+
+        <article class="card">
+          <div class="row">
+            <b>Trüf Mantarlı Risotto</b>
+            <span class="price">₺ 320</span>
+          </div>
+          <div class="divider"></div>
+          <p class="muted" style="margin:0">Parmesan, trüf yağı, mantar.</p>
+        </article>
+
+        <article class="card">
+          <div class="row">
+            <b>Fırın Sütlaç</b>
+            <span class="price">₺ 120</span>
+          </div>
+          <div class="divider"></div>
+          <p class="muted" style="margin:0">Karamelize üst katman, tarçın.</p>
+          <div style="margin-top:10px" class="tag">Tatlı</div>
+        </article>
+      </div>
+    </section>
+
+    <section id="hakkimizda">
+      <div class="section-head">
+        <div>
+          <h2>Hakkımızda</h2>
+          <p>Hikâyeni burada anlat: konsept, şef, malzeme felsefesi.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <p class="muted" style="margin-top:0">
+          Meocon Bistro, yerel üreticilerden gelen mevsim ürünleriyle hazırlanan tabakları,
+          sıcak servis anlayışı ve modern dokunuşlarıyla misafirlerini ağırlıyor.
+        </p>
+        <div class="divider"></div>
+        <div class="grid" style="grid-template-columns: repeat(3, 1fr);">
+          <div>
+            <b>🌿 Taze & Mevsimsel</b>
+            <p class="muted" style="margin:6px 0 0">Her hafta güncellenen ürünler.</p>
+          </div>
+          <div>
+            <b>🔥 Açık Mutfak</b>
+            <p class="muted" style="margin:6px 0 0">Şeffaf ve canlı deneyim.</p>
+          </div>
+          <div>
+            <b>🍷 Özenli İçecekler</b>
+            <p class="muted" style="margin:6px 0 0">İmza kokteyller & şarap seçkisi.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="rezervasyon">
+      <div class="section-head">
+        <div>
+          <h2>Rezervasyon</h2>
+          <p>Form demo amaçlıdır. Gönderince ekrana “başarılı” mesajı çıkar.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <form id="resForm" class="form">
+          <div>
+            <label>Ad Soyad</label>
+            <input required name="name" placeholder="Örn. Ayşe Yılmaz" />
+          </div>
+          <div>
+            <label>Telefon</label>
+            <input required name="phone" placeholder="+90 5xx xxx xx xx" />
+          </div>
+          <div>
+            <label>Tarih</label>
+            <input required type="date" name="date" />
+          </div>
+          <div>
+            <label>Saat</label>
+            <input required type="time" name="time" />
+          </div>
+
+          <div>
+            <label>Kişi Sayısı</label>
+            <select name="people">
+              <option>1</option><option selected>2</option><option>3</option><option>4</option>
+              <option>5</option><option>6</option><option>7</option><option>8+</option>
+            </select>
+          </div>
+
+          <div class="full">
+            <label>Not (isteğe bağlı)</label>
+            <textarea name="note" placeholder="Pencere kenarı, alerji bilgisi, özel gün…"></textarea>
+          </div>
+
+          <div class="full row">
+            <button class="btn primary" type="submit">Rezervasyon Talebi Gönder</button>
+            <span class="muted" style="font-weight:700">Ortalama dönüş: 10–30 dk</span>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section id="iletisim">
+      <div class="section-head">
+        <div>
+          <h2>İletişim</h2>
+          <p>Adres/telefon/harita linklerini buradan düzenle.</p>
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <b>📍 Adres</b>
+          <p class="muted">Örnek Mah. Örnek Cad. No: 10, İstanbul</p>
+          <div class="divider"></div>
+          <b>🕒 Saatler</b>
+          <p class="muted">Her gün 12:00 – 23:30</p>
+        </div>
+
+        <div class="card">
+          <b>📞 Telefon</b>
+          <p class="muted">+90 (5xx) xxx xx xx</p>
+          <div class="divider"></div>
+          <b>✉️ E-posta</b>
+          <p class="muted">rezervasyon@meoconbistro.com</p>
+        </div>
+
+        <div class="card">
+          <b>🗺️ Harita</b>
+          <p class="muted">Google Maps linkini buraya koyabilirsin.</p>
+          <a class="btn" href="#" onclick="alert('Buraya Google Maps linki ekleyebilirsin!')">Yol Tarifi Al</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap foot">
+      <div>© <span id="year"></span> Meocon Bistro · Tüm hakları saklıdır.</div>
+      <div class="muted">Instagram · TikTok · TripAdvisor</div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">
+    <b id="toastTitle">Başarılı</b>
+    <small id="toastMsg">Rezervasyon talebiniz alındı.</small>
+  </div>
+
+  <script>
+    // Basit "açık/kapalı" durumu (12:00–23:30)
+    const openStatus = document.getElementById("openStatus");
+    function setOpenStatus(){
+      const now = new Date();
+      const h = now.getHours() + now.getMinutes()/60;
+      const isOpen = h >= 12 && h <= 23.5;
+      openStatus.textContent = isOpen ? "Şu an açık" : "Şu an kapalı";
+      openStatus.style.color = isOpen ? "#9ef0a1" : "#ff9aa2";
+    }
+    setOpenStatus();
+    setInterval(setOpenStatus, 60000);
+
+    // Footer yılı
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Form: demo gönderim
+    const form = document.getElementById("resForm");
+    const toast = document.getElementById("toast");
+    const toastTitle = document.getElementById("toastTitle");
+    const toastMsg = document.getElementById("toastMsg");
+
+    function showToast(title, msg){
+      toastTitle.textContent = title;
+      toastMsg.textContent = msg;
+      toast.classList.add("show");
+      setTimeout(()=> toast.classList.remove("show"), 3500);
+    }
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(form).entries());
+      // burada gerçek projede: fetch('/api/reservation', {method:'POST', body: JSON.stringify(data)})
+      console.log("Rezervasyon talebi:", data);
+      showToast("Talep alındı ✅", "Sizi en kısa sürede arayıp onaylayacağız.");
+      form.reset();
+    });
+  </script>
+</body>
+</html>
