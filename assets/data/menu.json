@@ -1,0 +1,32 @@
+{
+  "currency": "₺",
+  "categories": [
+    {
+      "id": "baslangic",
+      "title": "Başlangıç",
+      "items": [
+        { "name": "Nar Ekşili Akdeniz Salata", "price": 160, "desc": "Roka, keçi peyniri, nar, ceviz.", "tags": ["Vegan Ops."] },
+        { "name": "Humus & Pita", "price": 140, "desc": "Zeytinyağı, sumak, sıcak pita.", "tags": ["Paylaşmalık"] },
+        { "name": "Günün Çorbası", "price": 95, "desc": "Mevsimine göre değişir.", "tags": ["Sıcak"] }
+      ]
+    },
+    {
+      "id": "anayemek",
+      "title": "Ana Yemek",
+      "items": [
+        { "name": "Köz Patlıcanlı Beğendi", "price": 260, "desc": "Dana eti, beğendi yatağı, taze otlar.", "tags": ["İmza"] },
+        { "name": "Trüf Mantarlı Risotto", "price": 320, "desc": "Parmesan, mantar, trüf yağı.", "tags": ["Popüler"] },
+        { "name": "Izgara Somon", "price": 390, "desc": "Limon & dereotu, sebze garnitür.", "tags": ["Şef Önerisi"] }
+      ]
+    },
+    {
+      "id": "tatli",
+      "title": "Tatlı",
+      "items": [
+        { "name": "Fırın Sütlaç", "price": 120, "desc": "Karamelize üst katman, tarçın.", "tags": ["Klasik"] },
+        { "name": "San Sebastian", "price": 170, "desc": "Yoğun peynirli, meyve sosu.", "tags": ["Popüler"] },
+        { "name": "Dondurma (3 top)", "price": 110, "desc": "Vanilya/çikolata/çilek.", "tags": ["Serin"] }
+      ]
+    }
+  ]
+}

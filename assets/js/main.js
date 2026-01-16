@@ -1,4 +1,3 @@
-// Aktif menü linki
 (function setActiveNav(){
   const path = location.pathname.split("/").pop() || "index.html";
   document.querySelectorAll('nav a[data-page]').forEach(a=>{
@@ -6,7 +5,6 @@
   });
 })();
 
-// Basit "açık/kapalı" durumu (12:00–23:30)
 (function openClosed(){
   const el = document.getElementById("openStatus");
   if(!el) return;
@@ -21,13 +19,11 @@
   setInterval(tick, 60000);
 })();
 
-// Footer yılı
 (function year(){
   const y = document.getElementById("year");
   if(y) y.textContent = new Date().getFullYear();
 })();
 
-// Toast helper
 function showToast(title, msg){
   const toast = document.getElementById("toast");
   if(!toast) return;
@@ -39,7 +35,6 @@ function showToast(title, msg){
   setTimeout(()=> toast.classList.remove("show"), 3500);
 }
 
-// Rezervasyon formu varsa bağla (demo)
 (function reservationForm(){
   const form = document.getElementById("resForm");
   if(!form) return;

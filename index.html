@@ -7,105 +7,110 @@
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
-  <header>
-    <div class="wrap nav">
-      <div class="brand">
-        <div class="logo">M</div>
-        <div>
-          <div>Meocon Bistro</div>
-          <div class="muted" style="font-size:12px; font-weight:700;">Modern Türk Mutfağı</div>
-        </div>
-      </div>
-
-      <nav aria-label="Site menüsü">
-        <ul>
-          <li><a href="index.html" data-page="index.html">Ana Sayfa</a></li>
-          <li><a href="menu.html" data-page="menu.html">Menü</a></li>
-          <li><a href="about.html" data-page="about.html">Hakkımızda</a></li>
-          <li><a href="reservation.html" data-page="reservation.html">Rezervasyon</a></li>
-          <li><a href="contact.html" data-page="contact.html">İletişim</a></li>
-        </ul>
-      </nav>
-
-      <div class="cta">
-        <a class="btn" href="menu.html">Menüyü Gör</a>
-        <a class="btn primary" href="reservation.html">Rezervasyon</a>
-      </div>
-    </div>
-  </header>
-
-  <main class="wrap">
-    <section class="hero">
+<header>
+  <div class="wrap nav">
+    <div class="brand">
+      <div class="logo">M</div>
       <div>
-        <div class="tag" style="border-radius:999px;">⭐ 4.8/5 · 2.000+ misafir</div>
-        <h1 style="margin-top:12px;">Şehrin ortasında, sıcak bir lezzet molası.</h1>
-        <p class="muted">
-          Mevsimsel ürünler, modern Türk mutfağı ve samimi bir atmosfer.
-        </p>
-        <div style="display:flex; gap:12px; flex-wrap:wrap;">
-          <a class="btn primary" href="reservation.html">Hemen Rezervasyon Yap</a>
-          <a class="btn" href="contact.html">Yol Tarifi & Saatler</a>
-        </div>
+        <div>Meocon Bistro</div>
+        <div class="muted" style="font-size:12px; font-weight:700;">Modern Türk Mutfağı</div>
       </div>
-
-      <aside class="hero-card">
-        <div class="hero-card-inner">
-          <div class="row">
-            <span class="tag">Öne Çıkan</span>
-            <span class="muted" id="openStatus">Kontrol ediliyor…</span>
-          </div>
-          <h2 style="font-size:20px; margin:0;">Bu akşam masan hazır mı?</h2>
-          <p class="muted">Rezervasyonunu 30 saniyede bırak, biz onaylayalım.</p>
-
-          <div class="mini-grid">
-            <div class="mini"><b>Çalışma</b><small>12:00 – 23:30</small></div>
-            <div class="mini"><b>Konum</b><small>İstanbul</small></div>
-            <div class="mini"><b>Mutfak</b><small>Modern Türk</small></div>
-            <div class="mini"><b>Telefon</b><small>+90 (5xx) xxx xx xx</small></div>
-          </div>
-        </div>
-      </aside>
-    </section>
-
-    <section>
-      <div class="section-head">
-        <div>
-          <h2>En Çok Sevilenler</h2>
-          <p class="muted">Hızlı bir göz at.</p>
-        </div>
-      </div>
-      <div class="grid">
-        <div class="card">
-          <div class="row"><b>Köz Patlıcanlı Beğendi</b><span class="price">₺ 260</span></div>
-          <div class="divider"></div>
-          <p class="muted">Dana eti, beğendi yatağı, taze otlar.</p>
-        </div>
-        <div class="card">
-          <div class="row"><b>Trüf Mantarlı Risotto</b><span class="price">₺ 320</span></div>
-          <div class="divider"></div>
-          <p class="muted">Parmesan, trüf yağı, mantar.</p>
-        </div>
-        <div class="card">
-          <div class="row"><b>Fırın Sütlaç</b><span class="price">₺ 120</span></div>
-          <div class="divider"></div>
-          <p class="muted">Karamelize üst katman, tarçın.</p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="wrap foot">
-      <div>© <span id="year"></span> Meocon Bistro · Tüm hakları saklıdır.</div>
-      <div class="muted">Instagram · TikTok · TripAdvisor</div>
     </div>
-  </footer>
 
-  <div class="toast" id="toast" role="status" aria-live="polite">
-    <b id="toastTitle">Başarılı</b>
-    <small id="toastMsg">Rezervasyon talebiniz alındı.</small>
+    <nav aria-label="Site menüsü">
+      <ul>
+        <li><a href="index.html" data-page="index.html">Ana Sayfa</a></li>
+        <li><a href="menu.html" data-page="menu.html">Menü</a></li>
+        <li><a href="about.html" data-page="about.html">Hakkımızda</a></li>
+        <li><a href="reservation.html" data-page="reservation.html">Rezervasyon</a></li>
+        <li><a href="contact.html" data-page="contact.html">İletişim</a></li>
+      </ul>
+    </nav>
+
+    <div class="cta">
+      <a class="btn" href="menu.html">Menüyü Gör</a>
+      <a class="btn primary" href="reservation.html">Rezervasyon</a>
+    </div>
   </div>
+</header>
 
-  <script src="assets/js/main.js"></script>
+<main class="wrap">
+  <section class="hero">
+    <div>
+      <div class="tag" style="border-radius:999px;">⭐ 4.8/5 · 2.000+ misafir</div>
+      <h1 style="margin-top:12px;">Şehrin ortasında, sıcak bir lezzet molası.</h1>
+      <p class="muted">Mevsimsel ürünler, modern Türk mutfağı ve samimi bir atmosfer.</p>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a class="btn primary" href="reservation.html">Hemen Rezervasyon Yap</a>
+        <a class="btn" href="contact.html">Yol Tarifi & Saatler</a>
+      </div>
+      <div class="card" style="margin-top:14px;">
+        <b>Bugün önerimiz</b>
+        <div class="divider"></div>
+        <p class="muted">Köz patlıcanlı beğendi · Nar ekşili salata · Fırın sütlaç</p>
+      </div>
+    </div>
+
+    <aside class="hero-card">
+      <div class="hero-card-inner">
+        <div class="row">
+          <span class="tag">Öne Çıkan</span>
+          <span class="muted" id="openStatus">Kontrol ediliyor…</span>
+        </div>
+        <h2 style="font-size:20px; margin:0;">Bu akşam masan hazır mı?</h2>
+        <p class="muted">Rezervasyonunu 30 saniyede bırak, biz onaylayalım.</p>
+
+        <div class="mini-grid">
+          <div class="mini"><b>Çalışma</b><small>12:00 – 23:30</small></div>
+          <div class="mini"><b>Konum</b><small>İstanbul</small></div>
+          <div class="mini"><b>Mutfak</b><small>Modern Türk</small></div>
+          <div class="mini"><b>Telefon</b><small>+90 (5xx) xxx xx xx</small></div>
+        </div>
+      </div>
+    </aside>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <div>
+        <h2>En Çok Sevilenler</h2>
+        <p class="muted">Hızlı bir göz at.</p>
+      </div>
+      <a class="btn" href="menu.html">Tüm Menü</a>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <div class="row"><b>Köz Patlıcanlı Beğendi</b><span class="price">₺ 260</span></div>
+        <div class="divider"></div>
+        <p class="muted">Dana eti, beğendi yatağı, taze otlar.</p>
+      </div>
+      <div class="card">
+        <div class="row"><b>Trüf Mantarlı Risotto</b><span class="price">₺ 320</span></div>
+        <div class="divider"></div>
+        <p class="muted">Parmesan, trüf yağı, mantar.</p>
+      </div>
+      <div class="card">
+        <div class="row"><b>Fırın Sütlaç</b><span class="price">₺ 120</span></div>
+        <div class="divider"></div>
+        <p class="muted">Karamelize üst katman, tarçın.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div>© <span id="year"></span> Meocon Bistro · Tüm hakları saklıdır.</div>
+    <div class="muted">Instagram · TikTok · TripAdvisor</div>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite">
+  <b id="toastTitle">Başarılı</b>
+  <small id="toastMsg">Rezervasyon talebiniz alındı.</small>
+</div>
+
+<script src="assets/js/main.js"></script>
 </body>
 </html>
